@@ -5,7 +5,6 @@ import { Loader, ThemeProvider } from '@aws-amplify/ui-react';
 export function LivenessQuickStartReact() {
   const [loading, setLoading] = React.useState(true);
   const [createLivenessApiData, setCreateLivenessApiData] = React.useState<any>(null);
-  const [error, setError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     const fetchCreateLiveness = async () => {
@@ -69,11 +68,7 @@ export function LivenessQuickStartReact() {
       // Handle error appropriately
     }
   };
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
+  
   return (
     <ThemeProvider>
       {loading ? (
